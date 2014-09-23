@@ -1,0 +1,4 @@
+gpc_secureexternallinks_ref:
+    pattern: /ref
+    defaults: { _controller: gpc.secureexternallinks.controller:ref }
+

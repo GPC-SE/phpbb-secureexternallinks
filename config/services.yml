@@ -1,0 +1,15 @@
+services:
+    gpc.secureexternallinks.controller:
+        class: gpc\secureexternallinks\controller\main
+        arguments:
+            - @request
+            - @controller.helper
+            - @template
+    gpc.secureexternallinks.listener:
+        class: gpc\secureexternallinks\event\main_listener
+        arguments:
+            - @controller.helper
+            - @template
+        tags:
+            - { name: event.listener }
+

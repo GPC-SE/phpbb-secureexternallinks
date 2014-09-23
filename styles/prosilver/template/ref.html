@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    <head>
+        <title>Sie verlassen die GPC</title>
+		
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="refresh" content="{DELAY}; URL={URL}">
+        <meta http-equiv="content-style-type" content="text/css" />
+        <style type="text/css">
+            /* <![CDATA[ */
+			body {
+				font-family:Verdana, Arial, Helvetica, sans-serif;
+				font-size:12px;
+				background-color:#fff;
+				color:#000;
+				margin-top: 5%;
+				text-align: center;
+			}
+			h1 { color: #f00; }
+			h2 {  }
+			strong { text-decoration: underline; }
+			#target_url {
+				font-weight: bold;
+				color: red;
+			}
+			#redirect {
+				margin-bottom:20%;
+			}
+			code { color: #f00; }
+			#info {text-align:left;}
+			#page {
+				position:relative;
+				top:0;
+				left:50%;
+				margin-left:-297px;
+				width:612px;
+			}
+            /* ]]> */
+        </style>
+    </head>
+    <body>
+        <div id="page">
+			<h1>Hinweis</h1>
+			<h2>Du verlässt penspinning.de</h2>
+			<p id="redirect">.. und wirst weitergeleitet nach:<br/><br/><a id="target_url" href="<?php echo $url ?>"><?php echo $url ?></a></p>
+			<hr/>
+			<div id="info">
+				<p>Gib niemals dein <strong>Passwort</strong> aus der GPC auf einer anderen Seite ein - <em>auch wenn sie so aussieht wie hier</em>! Prüfe bei jeder Eingabe, ob die Domain in der Adress-Leiste deines Browser mit <code>http://forum.penspinning.de/...</code> anf&auml;ngt.</p>
+				<p>Zu deiner eigenen <strong>Sicherheit</strong> (insb. zum Schutz vor <a href="http://de.wikipedia.org/wiki/Phishing">Phishing</a>) wirst du darauf hingewiesen, dass du nun das Angebot von Penspinning.de verl&auml;sst.</p>
+			<hr/>
+			</div>
+			<p><a href="http://www.penspinning.de">www.Penspinning.de</a></p>
+        </div>
+        <!-- /page -->
+    </body>
+</html>

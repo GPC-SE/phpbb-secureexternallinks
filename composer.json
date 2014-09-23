@@ -1,0 +1,27 @@
+{
+	"name": "gpc/secureexternallinks",
+	"type": "phpbb-extension",
+	"description": "A click on an external link will show a warning that the page is left (anti-phishing).",
+	"homepage": "http://forum.penspinning.de",
+	"version": "0.1.0",
+	"time": "2014-09-30",
+	"keywords": ["phpbb", "extension", "gpc", "secureexternallinks"],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Robert Heim",
+			"homepage": "http://blog.robert-heim.de",
+			"email": "robert@robert-heim.de",
+			"role": "Lead Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "GPC Secure External Links",
+		"soft-require": {
+			"phpbb/phpbb": "3.1.*"
+		}
+	}
+}
