@@ -20,15 +20,12 @@ function secure_external_links(base_url, whitelist_links) {
 	var arr = whitelist_links.split(",");
 	var arr_length = arr.length;
 
-	var in_whitelist = false;
-
 	var links = document.getElementsByTagName("a");
 
-	var j = 0;
 	var current_href = "";
 	for (var i = 0; i < links.length; i++) {
 		in_whitelist = false;
-		for (var j = 0; in_whitelist == false && j < arr_length; j++) {
+		for (var j = 0; !in_whitelist && j < arr_length; j++) {
 			current_href = links[i].href;
 			if (!current_href
 					|| current_href.match(arr[j])
@@ -39,7 +36,7 @@ function secure_external_links(base_url, whitelist_links) {
 			}
 		}
 
-		if (in_whitelist == false) {
+		if (!in_whitelist) {
 			links[i].href = base_url + "?url=" + escape(current_href);
 		}
 	}
