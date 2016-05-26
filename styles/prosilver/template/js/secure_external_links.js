@@ -1,16 +1,18 @@
 /**
- * @param base_url the page that provides the ref-function - it will get "?url=..." appended.
- * @param whitelist_links comma-separated list of valid domains
+ * @param base_url
+ *            the page that provides the ref-function - it will get "?url=..."
+ *            appended.
+ * @param whitelist_links
+ *            comma-separated list of valid domains
  */
-function secure_external_links(base_url, whitelist_links)
-{
-	var loc = window.location.hostname;
-	if(whitelist_links != "" && !whitelist_links.match(loc))
-	{
-		whitelist_links += ", " + loc;
+function secure_external_links(base_url, whitelist_links) {
+	function startsWith(str, word) {
+		return str.lastIndexOf(word, 0) === 0;
 	}
-	else if(whitelist_links == "")
-	{
+	var loc = window.location.hostname;
+	if (whitelist_links != "" && !whitelist_links.match(loc)) {
+		whitelist_links += ", " + loc;
+	} else if (whitelist_links == "") {
 		whitelist_links = loc;
 	}
 	whitelist_links = whitelist_links.replace(" ", "");
@@ -24,24 +26,21 @@ function secure_external_links(base_url, whitelist_links)
 
 	var j = 0;
 	var current_href = "";
-	for(var i = 0; i < links.length; i++)
-	{
+	for (var i = 0; i < links.length; i++) {
 		in_whitelist = false;
-		j = 0;
-		while(in_whitelist == false && j < arr_length)
-		{
+		for (var j = 0; in_whitelist == false && j < arr_length; j++) {
 			current_href = links[i].href;
-			if(current_href.match(arr[j]) || !current_href || !current_href.match("http://"))
-			{
+			if (!current_href
+					|| current_href.match(arr[j])
+					|| !(startsWith(current_href, "http://")
+							|| startsWith(current_href, "https://")
+							|| startsWith(current_href, "ftp://"))) {
 				in_whitelist = true;
 			}
-			j++;
 		}
-		
-		if(in_whitelist == false)
-		{
-			links[i].href = base_url+"?url=" + escape(current_href);
+
+		if (in_whitelist == false) {
+			links[i].href = base_url + "?url=" + escape(current_href);
 		}
 	}
 }
-

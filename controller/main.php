@@ -13,7 +13,7 @@ class main
 {
 	/* @var \phpbb\request\request */
 	protected $request;
-	
+
 	/* @var \phpbb\controller\helper */
 	protected $helper;
 
@@ -41,8 +41,8 @@ class main
 	 */
 	public function ref()
 	{
-		$delay=3;
-		$url=urldecode($this->request->variable('url', ''));
+		$delay = 3;
+		$url = urldecode($this->request->variable('url', ''));
 
 		$this->template->assign_var('DELAY', $delay);
 		$this->template->assign_var('URL', $url);
